@@ -1,9 +1,9 @@
 var h = require('hyperscript');
 var head = require('./head');
 
-module.exports = function(content, config) {
+module.exports = function(data /* { content, config }*/) {
     return h('html',
-        head(config),
+        head(data.config),
         h('body',
             h('.container', { id: 'wrapper' }, [
                 h('.three.columns.sidebar', [
@@ -14,6 +14,6 @@ module.exports = function(content, config) {
                             h('li', h('a', { href: '/about' }, 'About'))
                         ]))
                 ]),
-                h('.eight.columns.offset-by-one.content', content)
+                h('.eight.columns.offset-by-one.content', data.content)
             ])));
 };

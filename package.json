@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hghmn/hero-theme-charlotte.git"
+    "url": "git+https://github.com/hghmn/hexo-theme-charlotte.git"
   },
   "keywords": [
     "hexo",
@@ -17,7 +17,7 @@
   "author": "Nathan Hughes",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hghmn/hero-theme-charlotte/issues"
+    "url": "https://github.com/hghmn/hexo-theme-charlotte/issues"
   },
-  "homepage": "https://github.com/hghmn/hero-theme-charlotte#readme"
+  "homepage": "https://github.com/hghmn/hexo-theme-charlotte#readme"
 }

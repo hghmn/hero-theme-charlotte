@@ -1,3 +1,6 @@
+// import hyperscript through the renderer module
+const h = require('hexo-renderer-hyperscript/lib/h');
+
 function markdownRendererHelper(text) {
     return hexo.extend.helper.store.markdown(text);
 }
@@ -6,14 +9,14 @@ function markdownRendererHelper(text) {
 * Annotation tag extension for hexo theme
 *
 * Syntax:
-*   {% annotated /path/to/image [description] %}
+*   {% annotated_image /path/to/image [description] %}
 */
 hexo.extend.tag.register('annotated_image', function(args) {
     var link = markdownRendererHelper(`![](${args.shift()})`);
-    var annotation = markdownRendererHelper(`_${args.join(' ')}_`);
+    var annotation = markdownRendererHelper(`${args.join(' ')}`);
 
-    return `<div class="row">
-    <div class="six columns">${link}</div>
-    <div class="six columns">${annotation}</div>
-    </div>`;
+    return h('.row', [
+        h('.six.columns', { innerHTML: link }),
+        h('.six.columns', { innerHTML: annotation }),
+    ]).outerHTML;
 });
