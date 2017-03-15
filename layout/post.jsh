@@ -7,7 +7,11 @@ module.exports = function(post, _data) {
     return layout({
         config: _data.config,
         content: h('article.post', [
-            h('h1', post.title),
+            h('header', [
+                h('h1', post.title),
+                h('.subheading', null, post.date.format('YYYY-MM-DD')),
+            ]),
+            h('hr'), // maybe border bottom on header?
             h('p', { innerHTML: post.content }),
             h('.post-footer',
                 h('div.tags', null,

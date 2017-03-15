@@ -6,9 +6,11 @@ module.exports = function(page, _data) {
     return layout({
         config: _data.config, 
         content: h('div', [
-            h('h1', page.title),
+            h('header', [
+                h('h1', page.title)
+            ]),
             h('.content', { innerHTML: page.content }),
-            h('h2', 'Data'),
+            h('h2', 'Page Data'),
             h('pre', serialize(page))
         ])
     });

@@ -8,11 +8,12 @@ module.exports = function(data /* { content, config }*/) {
             h('.container', { id: 'wrapper' }, [
                 h('.three.columns.sidebar', [
                     h('nav',
-                        h('h3', { id: 'logo' }, 'Nathan Hughes'),
-                        h('ul', [
-                            h('li', h('a', { href: '/' }, 'Home')),
-                            h('li', h('a', { href: '/about' }, 'About'))
-                        ]))
+                        h('header',
+                            h('h2', { id: 'logo' }, 'Nathan Hughes'),
+                            h('ul', [
+                                h('li', h('a', { href: '/' }, 'Home')),
+                                h('li', h('a', { href: '/about' }, 'About'))
+                            ])))
                 ]),
                 h('.eight.columns.offset-by-one.content', data.content)
             ])));

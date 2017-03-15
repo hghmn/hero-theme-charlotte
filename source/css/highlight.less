@@ -1,170 +1,101 @@
-@import '_variables.less';
-@import '_mixins/for.less';
+/*
 
-@highlight-color-background: #f8f8f8; // @color-grey-light;
-@highlight-color-text: @color-grey-dark;
-@highlight-color-constant: #0092db; // #0092db;
-@highlight-color-keyword: #e96900; // !important
-@highlight-color-number: #ae81ff; // !important
+Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
-@languages: "html", "js", "bash", "css", "scss", "diff", "java", "xml",
-    "python", "json", "swift", "ruby", "perl", "php", "c", "cpp";
+*/
 
-// Code Colors
-// ––––––––––––––––––––––––––––––––––––––––––––––––––
-figure.highlight {
-    position: relative!important;
-    margin: 1em 0!important;
-    border-radius: 2px!important;
-    line-height: 1.1em!important;
-    background-color: #f8f8f8!important;
-    overflow-x: auto!important;
+@hljs-color-background: #F0F0F0;
 
-    table, tr, td {
-        width: 100%!important;
-        border-collapse: collapse!important;
-        padding: 0!important;
-        margin: 0!important;
-    }
-
-    .gutter {
-        display: none!important;
-    }
-
-    .gutter,
-    .code pre {
-        padding: 1.2em 1.4em!important;
-        line-height: 1.5em!important;
-        margin: 0!important;
-    }
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #F0F0F0;
 }
 
-figure.highlight.language .code:after {
-    position: absolute!important;
-    top: 0!important;
-    right: 0!important;
-    color: #ccc!important;
-    text-align: right!important;
-    font-size: 0.75em!important;
-    padding: 5px 10px 0!important;
-    line-height: 15px!important;
-    height: 15px!important;
-    font-weight: 600!important;
-    font-family: @font-family-sans-serif;
+
+/* Base color: saturation 0; */
+
+.hljs,
+.hljs__subst {
+  color: #444;
 }
 
-figure {
-    &.highlight {
-        .for(@languages); .-each(@name) {
-            // strip the quotes from the name to form the selector
-            @selector: escape(@name);
-
-            &.@{selector} .code:after {
-                // target this language for the highlighting
-                &:extend(figure.highlight.language .code:after);
-                content: @name;
-            }
-        }
-    }
+.hljs__comment {
+  color: #888888;
 }
 
-.code {
-    pre {
-        font-size: 0.75 * @font-size-base; // 0.8em!important;
-        background-color: @highlight-color-background;
-        font-family: @font-family-mono;
-        color: @highlight-color-text;
-
-        .number,
-        .literal {
-            color: @highlight-color-number;
-        }
-
-        .function .keyword,
-        .constant {
-            color: @highlight-color-constant;
-        }
-
-        .keyword,
-        .attribute {
-            color: @highlight-color-keyword;
-        }
-    }
+.hljs__keyword,
+.hljs__attribute,
+.hljs__selector-tag,
+.hljs__meta-keyword,
+.hljs__doctag,
+.hljs__name {
+  font-weight: bold;
 }
 
-pre .tag,
-pre .tag .title,
-pre .change,
-pre .winutils,
-pre .flow,
-pre .lisp .title,
-pre .clojure .built_in,
-pre .nginx .title,
-pre .tex .special {
-    color: #2973b7!important
+
+/* User color: hue: 0 */
+
+.hljs__type,
+.hljs__string,
+.hljs__number,
+.hljs__selector-id,
+.hljs__selector-class,
+.hljs__quote,
+.hljs__template-tag,
+.hljs__deletion {
+  color: #880000;
 }
 
-pre .symbol,
-pre .symbol .string,
-pre .value,
-pre .regexp {
-    color: #42b983!important
+.hljs__title,
+.hljs__section {
+  color: #880000;
+  font-weight: bold;
 }
 
-pre .title {
-    color: #83B917!important
+.hljs__regexp,
+.hljs__symbol,
+.hljs__variable,
+.hljs__template-variable,
+.hljs__link,
+.hljs__selector-attr,
+.hljs__selector-pseudo {
+  color: #BC6060;
 }
 
-pre .tag .value,
-pre .string,
-pre .subst,
-pre .haskell .type,
-pre .preprocessor,
-pre .ruby .class .parent,
-pre .built_in,
-pre .sql .aggregate,
-pre .django .template_tag,
-pre .django .variable,
-pre .smalltalk .class,
-pre .javadoc,
-pre .django .filter .argument,
-pre .smalltalk .localvars,
-pre .smalltalk .array,
-pre .attr_selector,
-pre .pseudo,
-pre .addition,
-pre .stream,
-pre .envvar,
-pre .apache .tag,
-pre .apache .cbracket,
-pre .tex .command,
-pre .prompt {
-    color: #42b983!important
+
+/* Language color: hue: 90; */
+
+.hljs__literal {
+  color: #78A960;
 }
 
-pre .comment,
-pre .meta,
-pre .java .annotation,
-pre .python .decorator,
-pre .template_comment,
-pre .pi,
-pre .doctype,
-pre .shebang,
-pre .apache .sqbracket,
-pre .tex .formula {
-    color: #b3b3b3!important
+.hljs__built_in,
+.hljs__bullet,
+.hljs__code,
+.hljs__addition {
+  color: #397300;
 }
 
-pre .deletion {
-    color: #BA4545!important
+
+/* Meta color: hue: 200 */
+
+.hljs__meta {
+  color: #1f7199;
 }
 
-pre .coffeescript .javascript,
-pre .javascript .xml,
-pre .tex .formula,
-pre .xml .javascript,
-pre .xml .vbscript,
-pre .xml .css,
-pre .xml .cdata {
-    opacity: 0.5!important
+.hljs__meta-string {
+  color: #4d99bf;
+}
+
+
+/* Misc effects */
+
+.hljs__emphasis {
+  font-style: italic;
+}
+
+.hljs__strong {
+  font-weight: bold;
 }
