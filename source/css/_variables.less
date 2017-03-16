@@ -6,11 +6,22 @@
 @bp-larger-than-desktop   : 1000px;
 @bp-larger-than-desktophd : 1200px;
 
+// Grid Variables
+@container-width: 1200px; // 960px;
+@container-width-larger-than-mobile: 85%;
+@container-width-larger-than-phablet: 80%;
+@total-columns: 12;
+@column-width: 100 / @total-columns; // calculates individual column width based off of # of columns
+@column-margin: 4%; // space between columns
+
+// Misc
+@global-radius: 4px;
+
 
 // Typography
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 // Font size rythms
-@font-size-base: 1.5em;
+@font-size-base: 1.6em;
 @font-family-serif: Times, Roman, 'Times New Roman', serif;
 @font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @font-family-mono: courier, monospace; // 'Roboto Mono','Lucida Console','Trebuchet MS','Courier New', Monaco, courier,'PingFang SC','Hiragino Sans GB','Microsoft Jhenghei','Microsoft YaHei', monospace!important;

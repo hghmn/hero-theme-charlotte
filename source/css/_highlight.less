@@ -6,11 +6,25 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 @hljs-color-background: #F0F0F0;
 
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+
 .hljs {
   display: block;
+  padding: .5rem .75rem;
+  margin: 0 .2rem;
+  font-size: 1.2rem;
   overflow-x: auto;
-  padding: 0.5em;
-  background: #F0F0F0;
+  // white-space: nowrap;
+  background: lighten(@color-grey-light, 6.4%);
+  border: 1px solid @color-grey-light;
+  border-radius: @global-radius;
 }
 
 
