@@ -1,0 +1,14 @@
+# Header
+menu:
+  home:
+    name: Home 
+    href: /
+  about:
+    name: About
+    href: /pages/about
+  todo:
+    name: "[todo]"
+    href: /pages/todo
+  archives:
+    name: Archives
+    href: /archives
